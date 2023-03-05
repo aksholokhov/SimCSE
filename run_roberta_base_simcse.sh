@@ -26,7 +26,7 @@ python -m torch.distributed.launch --nproc_per_node $NUM_GPU --master_port $PORT
     --train_file data/wiki1m_for_simcse.txt \
     --output_dir result/unsup_simcse_roberta_base \
     --num_train_epochs 1 \
-    --per_device_train_batch_size 512 \
+    --per_device_train_batch_size 64 \
     --learning_rate 1e-5 \
     --max_seq_length 32 \
     --evaluation_strategy steps \
