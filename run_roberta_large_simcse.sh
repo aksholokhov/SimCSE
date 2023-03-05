@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="bert_large"
+#SBATCH --job-name="roberta_large"
 #SBATCH --account=dynamicsai
 #SBATCH --partition=gpu-a40
 #SBATCH --nodes=1
@@ -13,6 +13,9 @@
 source ~/.bashrc
 
 conda activate compute
+
+module load gcc/11.2.0
+module load cuda/11.8.0
 
 python train.py \
     --model_name_or_path roberta-large \

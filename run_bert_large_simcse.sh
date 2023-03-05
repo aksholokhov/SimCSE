@@ -12,6 +12,9 @@
 
 source ~/.bashrc
 
+module load gcc/11.2.0
+module load cuda/11.8.0
+
 conda activate compute
 
 python train.py \
