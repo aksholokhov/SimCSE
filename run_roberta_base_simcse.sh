@@ -1,7 +1,4 @@
 #!/bin/bash
-
-source ~/.bashrc
-
 #SBATCH --job-name="bert_large"
 #SBATCH --account=dynamicsai
 #SBATCH --partition=gpu-a40
@@ -12,6 +9,8 @@ source ~/.bashrc
 #SBATCH --time=23:00:00
 
 #SBATCH --output=logs/slurm-%A_%a.out
+
+source ~/.bashrc
 
 conda activate compute
 
