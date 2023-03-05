@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ~/.bashrc
+
 #SBATCH --job-name="bert_large"
 #SBATCH --account=dynamicsai
 #SBATCH --partition=gpu-a40
