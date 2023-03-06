@@ -1,8 +1,21 @@
 #!/bin/bash
+#SBATCH --job-name="bert_large"
+#SBATCH --account=dynamicsai
+#SBATCH --partition=gpu-a40
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=4
+#SBATCH --gpus=1
+#SBATCH --mem=32G
+#SBATCH --time=23:00:00
 
-# In this example, we show how to train SimCSE on unsupervised Wikipedia data.
-# If you want to train it with multiple GPU cards, see "run_sup_example.sh"
-# about how to use PyTorch's distributed data parallel.
+#SBATCH --output=logs/slurm-%A_%a.out
+
+source ~/.bashrc
+
+module load gcc/11.2.0
+module load cuda/11.8.0
+
+conda activate compute
 
 python train.py \
     --model_name_or_path bert-large-uncased \
