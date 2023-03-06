@@ -166,7 +166,7 @@ class CLTrainer(Trainer):
                 or self.state.best_model_checkpoint is None
                 or operator(metric_value, self.state.best_metric)
             ):
-                output_dir = self.args.output_dir
+                output_dir = self.args.output_dir + f"_{self.state.global_step}"
                 self.state.best_metric = metric_value
                 self.state.best_model_checkpoint = output_dir
 
