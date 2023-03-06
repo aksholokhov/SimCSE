@@ -116,8 +116,14 @@ class ModelArguments:
             "help": "Weight for MLM auxiliary objective (only effective if --do_mlm)."
         }
     )
-    dropout: float = field(
-        default=0.1,
+    attention_probs_dropout_prob: float = field(
+        default=0.01,
+        metadata={
+            "help": "Model dropout probability."
+        }
+    )
+    hidden_dropout_prob: float = field(
+        default=0.02,
         metadata={
             "help": "Model dropout probability."
         }
@@ -325,7 +331,8 @@ def main():
     # The .from_pretrained methods guarantee that only one local process can concurrently
     # download model & vocab.
     config_kwargs = {
-        "dropout": model_args.dropout,
+        "attention_probs_dropout_prob": model_args.attention_probs_dropout_prob,
+        "hidden_dropout_prob": model_args.hidden_dropout_prob,
         "cache_dir": model_args.cache_dir,
         "revision": model_args.model_revision,
         "use_auth_token": True if model_args.use_auth_token else None,
