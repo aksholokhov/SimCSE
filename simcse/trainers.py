@@ -162,9 +162,10 @@ class CLTrainer(Trainer):
 
             operator = np.greater if self.args.greater_is_better else np.less
             if (
-                self.state.best_metric is None
-                or self.state.best_model_checkpoint is None
-                or operator(metric_value, self.state.best_metric)
+                # self.state.best_metric is None
+                # or self.state.best_model_checkpoint is None
+                # or operator(metric_value, self.state.best_metric)
+                True
             ):
                 output_dir = self.args.output_dir + f"_{self.state.global_step}"
                 self.state.best_metric = metric_value
