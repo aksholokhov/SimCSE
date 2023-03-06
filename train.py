@@ -116,6 +116,12 @@ class ModelArguments:
             "help": "Weight for MLM auxiliary objective (only effective if --do_mlm)."
         }
     )
+    dropout: float = field(
+        default=0.1,
+        metadata={
+            "help": "Model dropout probability."
+        }
+    )
     mlp_only_train: bool = field(
         default=False,
         metadata={
@@ -319,6 +325,7 @@ def main():
     # The .from_pretrained methods guarantee that only one local process can concurrently
     # download model & vocab.
     config_kwargs = {
+        "dropout": model_args.dropout,
         "cache_dir": model_args.cache_dir,
         "revision": model_args.model_revision,
         "use_auth_token": True if model_args.use_auth_token else None,
