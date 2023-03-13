@@ -11,6 +11,7 @@ Link to original paper: https://arxiv.org/abs/2104.08821
 
 ## Quick Links
 
+  - [Final report](final-report)
   - [Compute Details](#compute-details)
   - [Dependencies](#dependencies)
   - [Data download](#data-download)
@@ -20,6 +21,9 @@ Link to original paper: https://arxiv.org/abs/2104.08821
   - [Pre-trained models](#pretrained)
   - [Additional experiments](#additional-exp)
   - [Table of Results](#main-results)
+
+## Final report
+To read the full reproducibility study, please check out the `SimCSE_final_project.pdf` in the repo.
 
 
 ## Compute Details
@@ -123,7 +127,13 @@ Currently, the work only supports checkpoints of pre-trained BERT-based models l
 
 
 ## Additional experiments
-For reproducing data augmentations and the uniformity/alignment analysis from the original paper, check out the jupyter notebook in `cse517wi23_reproducibility_study/Reproducibility.ipynb`.
+For reproducing data augmentations and the uniformity/alignment analysis from the original paper, check out the jupyter notebook in `cse517wi23_reproducibility_study/Reproducibility.ipynb`. 
+
+To run unsup SimCSE on different data augmentation, first generate the augmented dataset using the jupyter notebook. Then, run the bash files corresponding to the specific data augmentation. For example, here we run unsup SimCSE bert_base_uncased model on wiki1M data augmented using delete-one-word .
+
+```bash
+sh run_delete_one_word.sh
+```
 
 
 ## Table of Results
