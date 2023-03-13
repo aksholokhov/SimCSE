@@ -1,8 +1,8 @@
 ## (Reproducibility study) SimCSE: Simple Contrastive Learning of Sentence Embeddings
 
-In this repo, we reproduce the results for unsupervised SimCSE. The original authors of the paper are Tianyu Gao, Xingcheng Yao, and Danqi Chen. The authors of this reproducibility study are [@aksholokhov](https://github.com/aksholokhov) and [@birajpandey](https://github.com/birajpandey).
+In this repo, we reproduce the results for unsupervised SimCSE as part of our final project for CSE517 Natural Language Processing (NLP) course at the University of Washington (UW). The authors of this reproducibility study are [@aksholokhov](https://github.com/aksholokhov) and [@birajpandey](https://github.com/birajpandey). 
 
-
+The original authors of the paper are Tianyu Gao, Xingcheng Yao, and Danqi Chen. 
 Link to original repo: https://github.com/princeton-nlp/SimCSE 
 
 Link to original paper: https://arxiv.org/abs/2104.08821
