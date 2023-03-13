@@ -17,6 +17,7 @@ Link to original paper: https://arxiv.org/abs/2104.08821
   - [Data download](#data-download)
   - [Data preprocessing](#data-preprocess)
   - [Training](#training)
+  - [Hyperparameters](#hyperparams)
   - [Evaluation](#evaluation)
   - [Pre-trained models](#pretrained)
   - [Additional experiments](#additional-exp)
@@ -81,6 +82,15 @@ The possible the arguments for training are the following:
 
 All the other arguments are standard Huggingface's `transformers` training arguments. Some of the often-used arguments are: `--output_dir`, `--learning_rate`, `--per_device_train_batch_size`. In our example scripts, we also set to evaluate the model on the STS-B development set (need to download the dataset following the [evaluation](#evaluation) section) and save the best checkpoint.
 
+
+## Hyperparameters 
+We use the following hyperparameters for the study. We differ from the original paper in the batchsize for RoBERTa due to compute limitations.
+
+|               | Unsup. BERT | Unsup. RoBERTa |
+|:--------------|:-----------:|:--------------:|
+| Batch size    | 64          | 64            |
+| Learning rate (base)  | 3e-5 | 1e-5 |
+| Learning rate (large) | 1e-5 | 3e-5 |
 
 ## Evaluation
 Our evaluation code for sentence embeddings is based on a modified version of [SentEval](https://github.com/facebookresearch/SentEval). It evaluates sentence embeddings on semantic textual similarity (STS) tasks and downstream transfer tasks. For STS tasks, our evaluation takes the "all" setting, and report Spearman's correlation. See [our paper](https://arxiv.org/pdf/2104.08821.pdf) (Appendix B) for evaluation details.
